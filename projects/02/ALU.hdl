@@ -45,11 +45,11 @@ CHIP ALU {
     // Put you code here:
     Mux16(a=x, b=false, sel=zx, out=zxOut);
     Not16(in=zxOut, out=NotzxOut);
-    Mux16(a=zxOut, b=NotzxOut, sel=zx, out=nxOut);
+    Mux16(a=zxOut, b=NotzxOut, sel=nx, out=nxOut);
 
     Mux16(a=y, b=false, sel=zy, out=zyOut);
     Not16(in=zyOut, out=NotzyOut);
-    Mux16(a=zyOut, b=NotzyOut, sel=zy, out=nyOut);
+    Mux16(a=zyOut, b=NotzyOut, sel=ny, out=nyOut);
 
     Add16(a=nxOut, b=nyOut, out=sum);
     And16(a=nxOut, b=nyOut, out=anding);
